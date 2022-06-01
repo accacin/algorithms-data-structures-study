@@ -49,6 +49,6 @@ function sumZero2(arr) {
     else if (sum > 0)
       right--;
     else
-      left--;
+      left++;
   }
 }
