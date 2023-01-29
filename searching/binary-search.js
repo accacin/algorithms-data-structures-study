@@ -12,38 +12,30 @@
 */
 
 /* Big O
-
-Best - O(1)
-Worst/average - O(log n)
+  Best - O(1)
+  Worst/average - O(log n)
 */
 
 function binarySearch(arr, value) {
   let left = 0;
   let right = arr.length - 1;
-  let mid = Math.floor(left + ((right - left) / 2));
 
-  while ((arr[mid] !== value) && (left <= right)) {
+  let mid = Math.floor(left + (right - left) / 2);
+
+  while (arr[mid] !== value && left <= right) {
     if (value < arr[mid]) right = mid - 1;
     else left = mid + 1;
 
-    mid = Math.floor(left + ((right - left) / 2));
+    mid = Math.floor(left + (right - left) / 2);
   }
 
-  return arr[mid] === value ? mid : -1;
+  return arr[mid] == value ? mid : -1;
 }
 
-console.log(
-  binarySearch([1,2,3,4,5], 2) === 1
-);
+console.log(binarySearch([1, 2, 3, 4, 5], 2) === 1);
 
-console.log(
-  binarySearch([1,2,3,4,5], 3) === 2
-);
+console.log(binarySearch([1, 2, 3, 4, 5], 3) === 2);
 
-console.log(
-  binarySearch([1,2,3,4,5], 5) === 4
-);
+console.log(binarySearch([1, 2, 3, 4, 5], 5) === 4);
 
-console.log(
-  binarySearch([1,2,3,4,5], 6) === -1
-);
+console.log(binarySearch([1, 2, 3, 4, 5], 6) === -1);
