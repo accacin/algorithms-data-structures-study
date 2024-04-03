@@ -3,6 +3,5 @@ function linearSearch(arr, value) {
     if (arr[i] === value) return i;
   }
 
-  // value wasn't found
   return -1;
 }

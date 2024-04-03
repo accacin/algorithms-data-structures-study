@@ -17,19 +17,14 @@
 */
 
 function binarySearch(arr, value) {
-  let left = 0;
-  let right = arr.length - 1;
+  let start = 0;
+  let end = arr.length - 1;
+  let mid = Math.floor((start + (end - start)) / 2);
 
-  let mid = Math.floor(left + (right - left) / 2);
-
-  while (arr[mid] !== value && left <= right) {
-    if (value < arr[mid]) right = mid - 1;
-    else left = mid + 1;
-
-    mid = Math.floor(left + (right - left) / 2);
+  while (arr[mid] !== value && start <= end) {
+    if (value < arr[mid]) end = mid - 1;
+    else start = mid + 1;
   }
-
-  return arr[mid] == value ? mid : -1;
 }
 
 console.log(binarySearch([1, 2, 3, 4, 5], 2) === 1);
